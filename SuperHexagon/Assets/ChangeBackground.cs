@@ -5,9 +5,9 @@ using UnityEngine;
 public class ChangeBackground : MonoBehaviour{
     Color bgcolor;
     Color current;
-    float duration = 1.0f;
+    //float duration = 1.0f;
     float t = 0.0f;
-    float smoothnes = 0.02f;
+    //float smoothnes = 0.02f;
     float increment = 0.02f;
 
     public void Start () {

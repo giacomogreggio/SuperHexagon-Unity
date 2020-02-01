@@ -21,7 +21,7 @@ public class Timer : MonoBehaviour{
 //    return String.Format("{0:00}:{1:00}.{2:00}", minutes, seconds, hundredths);
         int timer = (int)(t * 100.0f);
         string seconds = ((timer % (60 * 100)) / 100).ToString();
-        string tenths = (timer % 100).ToString();
+        string tenths = (timer % 100).ToString("D2");
 
         timerText.text = seconds + ":" + tenths;
     }
