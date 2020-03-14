@@ -35,7 +35,6 @@ public class BestScore : MonoBehaviour{
     void Update(){
         score = splitTime(scoreText.text);
         //Debug.Log(score);
-        //score = PlayerPrefs.GetFloat("Timer", score);
         if(score > highScore){
             UpdateLabelHighScore();
         }
@@ -46,7 +45,6 @@ public class BestScore : MonoBehaviour{
             highScoreText.text = "NEW RECORD";
             scoreLabel.SetActive(false);
         }
-        //Debug.Log("EVVIVA");
         highScoreText.alignment = TextAnchor.MiddleRight;
     }
 
@@ -55,26 +53,15 @@ public class BestScore : MonoBehaviour{
         //Debug.Log(score);
         //Debug.Log(scoreText.text);
         if(score > highScore){
-            PlayerPrefs.SetString("HighScore", scoreText.text);
+            setScore();
         }
     }
 
-    /*void Update(){
-        string oldScoreString = PlayerPrefs.GetString("HighScore", highScore.text);
-        string timeScoreString = PlayerPrefs.GetString("Timer", time.text);
-        float oldScore = splitTime(oldScoreString);
-        float timeScore = splitTime(timeScoreString);
-        if(oldScore <= timeScore){
-            PlayerPrefs.SetString("HighScore", timeScoreString);
-            highScore.text = "NEW RECORD";
-            scoreLabel.SetActive(false);
-        }else{
-            highScore.text = oldScoreString;
-            scoreLabel.SetActive(true);
-        }
-        highScore.alignment = TextAnchor.MiddleRight;
-    }*/
+    void setScore(){
+        PlayerPrefs.SetString("HighScore", scoreText.text);
+    }
 
+    //convert time/score string into float
     public float splitTime(string sequence){
         if(sequence == null){
             return default(float);
