@@ -22,13 +22,14 @@ public class Player : MonoBehaviour{
             }
         //playing from keyboard required this line into FixedUpdateMethod
         transform.RotateAround(Vector3.zero, Vector3.forward, movement * Time.fixedDeltaTime * -moveSpeed); 
-        }       
+        }    
     }
 
     /*private void FixedUpdate(){
     }*/
 
     private void OnTriggerEnter2D(Collider2D collision){
+        BestScore.instance.SaveHighScore();
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }

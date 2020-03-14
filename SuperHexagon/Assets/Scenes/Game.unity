@@ -265,7 +265,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 4
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -466,7 +466,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 382.4, y: 292.5}
+  m_AnchoredPosition: {x: 382.4004, y: 292.5}
   m_SizeDelta: {x: -52.6, y: -15}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1245900136
@@ -516,7 +516,7 @@ GameObject:
   - component: {fileID: 1335444028}
   - component: {fileID: 1335444027}
   m_Layer: 5
-  m_Name: Score
+  m_Name: HighScore
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -739,7 +739,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a94bde156ae36947a6fae0619394427, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scoreText: {fileID: 1335444027}
+  scoreText: {fileID: 1475463032}
+  highScoreText: {fileID: 1335444027}
+  gameOverScoreText: {fileID: 0}
   scoreLabel: {fileID: 2021279915}
 --- !u!1 &1463542007
 GameObject:
@@ -1049,7 +1051,7 @@ GameObject:
   - component: {fileID: 2021279918}
   - component: {fileID: 2021279917}
   m_Layer: 5
-  m_Name: ScoreLabel
+  m_Name: HighScoreLabel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
