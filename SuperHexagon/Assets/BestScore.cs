@@ -13,7 +13,7 @@ public class BestScore : MonoBehaviour{
 
     private float score, highScore;
 
-    public Text scoreText, highScoreText, gameOverScoreText;
+    public Text scoreText, highScoreText;
 
     //label to hide for new record
     public GameObject scoreLabel;
@@ -53,12 +53,17 @@ public class BestScore : MonoBehaviour{
         //Debug.Log(score);
         //Debug.Log(scoreText.text);
         if(score > highScore){
-            setScore();
+            setHighScore();
         }
+        setGameOverScore();
     }
 
-    void setScore(){
+    void setHighScore(){
         PlayerPrefs.SetString("HighScore", scoreText.text);
+    }
+
+    void setGameOverScore(){
+        PlayerPrefs.SetString("GameOverScore", scoreText.text);
     }
 
     //convert time/score string into float
