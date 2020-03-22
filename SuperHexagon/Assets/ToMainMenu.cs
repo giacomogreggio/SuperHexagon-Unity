@@ -5,8 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class ToMainMenu : MonoBehaviour{
 
-        public void ReachMainMenu(){
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 2);
+    public void ReachMainMenu(){
+        SceneManager.LoadScene("Menù");
     }
 
 }

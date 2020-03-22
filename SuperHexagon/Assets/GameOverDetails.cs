@@ -49,12 +49,13 @@ public class GameOverDetails : MonoBehaviour{
         if(score >= 30){
             return "45 SECONDS";
         }else{
+            float initialScore = score;
             while(score >= 10){
                 score = score - 10;
             }
             toNext = 10 - score;
             //Debug.Log(toNext);
-            float total = score + toNext;
+            float total = initialScore + toNext;
             return total.ToString() + " SECONDS";
         }
 

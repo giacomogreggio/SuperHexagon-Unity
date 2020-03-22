@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class RestartScript : MonoBehaviour{
+public class ToSelectStage : MonoBehaviour{
 
-    public void RestartGame(){
-        SceneManager.LoadScene("Game");
+    public void ReachSelectStage(){
+        SceneManager.LoadScene("SelectStage");
     }
 
 }

@@ -19,6 +19,7 @@ public class BestScore : MonoBehaviour{
     public GameObject scoreLabel;
 
     void Start(){
+        //ResetHighScore();
         score = 0;
         highScore = splitTime(PlayerPrefs.GetString("HighScore", "0:00"));
         Debug.Log(highScore);

@@ -201,7 +201,7 @@ GameObject:
   - component: {fileID: 309043328}
   - component: {fileID: 309043327}
   m_Layer: 5
-  m_Name: PanelSelectLevel
+  m_Name: PanelSelectStage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1088,10 +1088,10 @@ MonoBehaviour:
   m_Script: {fileID: 1980459831, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -2362,8 +2362,9 @@ GameObject:
   - component: {fileID: 2090013063}
   - component: {fileID: 2090013062}
   - component: {fileID: 2090013061}
+  - component: {fileID: 2090013064}
   m_Layer: 5
-  m_Name: SelectLevelButton
+  m_Name: SelectStageButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2429,8 +2430,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: PlayGame
+      - m_Target: {fileID: 2090013064}
+        m_MethodName: ReachSelectStage
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2475,6 +2476,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2090013059}
   m_CullTransparentMesh: 0
+--- !u!114 &2090013064
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2090013059}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e29bb4f1810b81a4b996c0e235b643b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2125969248
 GameObject:
   m_ObjectHideFlags: 0
