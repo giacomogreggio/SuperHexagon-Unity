@@ -79,8 +79,4 @@ public class BestScore : MonoBehaviour{
         //Debug.Log("Tenths: " + tenths);
         return seconds + tenths;
     }
-
-    public void ResetHighScore(){
-        PlayerPrefs.SetString("HighScore", "0:00");
-    }
 }
