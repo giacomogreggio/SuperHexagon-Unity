@@ -1913,6 +1913,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 668810bb08b3c2046a988da434bcfa38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  optionMenu: {fileID: 673942091346052486, guid: a77d24fb65951994e8f90fa5dbac0110,
+    type: 3}
+  mainMenu: {fileID: 2203099536042341776, guid: 306053ab656d6f24fb8ad53381ec29f6,
+    type: 3}
+  title: {fileID: 8633971634264655615, guid: 4467bf3bb87c1d444846f37aab75047e, type: 3}
 --- !u!1 &1880552965
 GameObject:
   m_ObjectHideFlags: 0

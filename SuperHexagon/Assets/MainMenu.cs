@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class MainMenu : MonoBehaviour{
 
-    GameObject optionMenu;
+    GameObject optionMenus;
     
     public void PlayGame(){
         SceneManager.LoadScene("SelectStage");
@@ -15,4 +16,14 @@ public class MainMenu : MonoBehaviour{
         //Debug.Log("Quit");
         Application.Quit();
     }
+
+    public void savePreviousScene(){
+        Debug.Log(SceneManager.GetActiveScene().name);
+        PlayerPrefs.SetString("CurrentScene", SceneManager.GetActiveScene().name);
+    }
+
+    public void OptionsGame(){
+        SceneManager.LoadScene("Options");
+    }
+
 }
