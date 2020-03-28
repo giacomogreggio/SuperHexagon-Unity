@@ -14,4 +14,13 @@ public class BackToPreviousScene : MonoBehaviour{
         }
     }
 
+    public void verifyPreviousSceneTutorial(){
+        string scene = PlayerPrefs.GetString("CurrentSceneForTutorial", "");
+        if(scene != ""){
+            SceneManager.LoadScene(scene);
+        }else{
+            Debug.Log("A problem occured! We are sorry :( Please reopen the application!");
+        }
+    } 
+
 }
