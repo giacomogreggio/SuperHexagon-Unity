@@ -13,6 +13,8 @@ public class BestScore : MonoBehaviour{
 
     private float score, highScore;
 
+    private string savedHighScore;
+
     public Text scoreText, highScoreText;
 
     //label to hide for new record
@@ -21,13 +23,31 @@ public class BestScore : MonoBehaviour{
     void Start(){
         //ResetHighScore();
         score = 0;
-        highScore = splitTime(PlayerPrefs.GetString("HighScore", "0:00"));
-        Debug.Log(highScore);
+        savedHighScore = "";
+        if(PlayerPrefs.GetString("stageName","") == "HEXAGON"){
+            savedHighScore = PlayerPrefs.GetString("HighScore1", "0:00");
+            highScore = splitTime(savedHighScore);
+            Debug.Log(highScore);
+        }
+        if(PlayerPrefs.GetString("stageName","") == "HEXAGONER"){
+            savedHighScore = PlayerPrefs.GetString("HighScore2", "0:00");
+            highScore = splitTime(savedHighScore);
+            Debug.Log(highScore);
+        }
+        if(PlayerPrefs.GetString("stageName","") == "HEXAGONEST"){
+            savedHighScore = PlayerPrefs.GetString("HighScore3", "0:00");
+            highScore = splitTime(savedHighScore);
+            Debug.Log(highScore);
+        }
         if(highScore == 0.0){
             highScoreText.text = "NEW RECORD";
             scoreLabel.SetActive(false);
         }else{
-            highScoreText.text = PlayerPrefs.GetString("HighScore", "0:00"); //error if 0:00 that is default value
+            if(savedHighScore != ""){
+                highScoreText.text = savedHighScore; //error if 0:00 that is default value
+            }else{
+                Debug.Log("Error occured during getting stageName");
+            }
             scoreLabel.SetActive(true);
         }
         highScoreText.alignment = TextAnchor.MiddleRight;
@@ -60,7 +80,15 @@ public class BestScore : MonoBehaviour{
     }
 
     void setHighScore(){
-        PlayerPrefs.SetString("HighScore", scoreText.text);
+        if(PlayerPrefs.GetString("stageName","") == "HEXAGON"){
+            PlayerPrefs.SetString("HighScore1", scoreText.text);
+        }
+        if(PlayerPrefs.GetString("stageName","") == "HEXAGONER"){
+            PlayerPrefs.SetString("HighScore2", scoreText.text);
+        }
+        if(PlayerPrefs.GetString("stageName","") == "HEXAGONEST"){
+            PlayerPrefs.SetString("HighScore3", scoreText.text);
+        }
     }
 
     void setGameOverScore(){

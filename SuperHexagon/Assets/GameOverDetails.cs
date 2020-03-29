@@ -23,7 +23,16 @@ public class GameOverDetails : MonoBehaviour{
             highScore.text = "NEW RECORD";
         }else{
             nextLevel.text = calculationResult;
-            highScore.text = PlayerPrefs.GetString("HighScore", "0:00");
+            string stageName = PlayerPrefs.GetString("stageName", "");
+            if(stageName == "HEXAGON"){
+                highScore.text = PlayerPrefs.GetString("HighScore1", "0:00");
+            }
+            if(stageName == "HEXAGONER"){
+                highScore.text = PlayerPrefs.GetString("HighScore2", "0:00");
+            }
+            if(stageName == "HEXAGONEST"){
+                highScore.text = PlayerPrefs.GetString("HighScore3", "0:00");
+            }
         }
     }
 

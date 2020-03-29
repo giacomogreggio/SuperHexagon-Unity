@@ -179,7 +179,7 @@ Canvas:
   m_GameObject: {fileID: 242938687}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
+  m_RenderMode: 1
   m_Camera: {fileID: 0}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
@@ -413,7 +413,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8e7dc38a94923047ac9bd130e0d148d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnRate: 1
+  nextSpawn: 1
   hexagonPrefab: {fileID: 6433917521061203738, guid: ab79aa0663b9e89448b89ce5150ed50e,
     type: 3}
 --- !u!4 &815865773

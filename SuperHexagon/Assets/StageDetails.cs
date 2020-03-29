@@ -5,22 +5,13 @@ using UnityEngine.UI;
 
 public class StageDetails : MonoBehaviour{
  
-    public Text highScore, difficulty, stageName;
+    public Text highScore1, highScore2, highScore3;
 
     void Start(){
-        stageName.text = "HEXAGONER";
-        difficulty.text = setDifficulty();
-        highScore.text = PlayerPrefs.GetString("HighScore", "0:00");
-    }
-
-    string setDifficulty(){
-        if(stageName.text == "HEXAGON"){
-            return "HARD";
-        }
-        if(stageName.text == "HEXAGONER"){
-            return "HARDER";
-        }else{
-            return "HARDEST";
-        }
+        string stageName = PlayerPrefs.GetString("stageName", "");
+        highScore1.text = PlayerPrefs.GetString("HighScore1", "0:00");
+        highScore2.text = PlayerPrefs.GetString("HighScore2", "0:00");
+        highScore3.text = PlayerPrefs.GetString("HighScore3", "0:00");
+        //Debug.Log("In the beginning of application there aren't any highscore");
     }
 }
