@@ -2364,7 +2364,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1975567438}
-        m_MethodName: RestartGame
+        m_MethodName: Restart
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2418,10 +2418,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1975567433}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f60c66c4f8697914da079cfdaa34328b, type: 3}
+  m_Script: {fileID: 11500000, guid: 4af78a7e933d7eb4789785e93ad4ef14, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stageName: {fileID: 0}
 --- !u!1 &1992586927
 GameObject:
   m_ObjectHideFlags: 0
@@ -2716,9 +2715,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e29bb4f1810b81a4b996c0e235b643b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stage1: {fileID: 735093492103219330, guid: e35cee532c687454a9a30a1459b73eca, type: 3}
-  stage2: {fileID: 8283653378283456807, guid: 534e3b301dc04d94d88ec516dfa213fb, type: 3}
-  stage3: {fileID: 4110107622844795947, guid: fa4957e2e0d1a2643ad912788851cf34, type: 3}
 --- !u!1 &2125969248
 GameObject:
   m_ObjectHideFlags: 0

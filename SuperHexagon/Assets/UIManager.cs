@@ -25,18 +25,21 @@ public class UIManager : MonoBehaviour{
     }
 
     public void ToSecondStage(){
+        PlayerPrefs.SetString("stageName", stage2Text.text);
         stage1.DOAnchorPos(new Vector2(-1954,0), 0.25f);
         stage2.DOAnchorPos(new Vector2(0,0), 0.25f);
         stage3.DOAnchorPos(new Vector2(1954,0), 0.25f);
     }
 
     public void ToFirstStage(){
+        PlayerPrefs.SetString("stageName", stage1Text.text);
         stage1.DOAnchorPos(new Vector2(0,0), 0.25f);
         stage2.DOAnchorPos(new Vector2(1954,0), 0.25f);
         stage3.DOAnchorPos(new Vector2(3899,0), 0.25f);
     }
 
     public void ToThirdStage(){
+        PlayerPrefs.SetString("stageName", stage3Text.text);
         stage1.DOAnchorPos(new Vector2(-3899,0), 0.25f);
         stage2.DOAnchorPos(new Vector2(-1954,0), 0.25f);
         stage3.DOAnchorPos(new Vector2(0,0), 0.25f);
