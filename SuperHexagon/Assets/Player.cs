@@ -21,12 +21,15 @@ public class Player : MonoBehaviour{
                 movement = -1;
             }
         //playing from keyboard required this line into FixedUpdateMethod
-        transform.RotateAround(Vector3.zero, Vector3.forward, movement * Time.fixedDeltaTime * -moveSpeed); 
+        transform.RotateAround(Vector3.zero, Vector3.forward, movement * Time.fixedDeltaTime * -moveSpeed);
         }
     }
 
     void OnTriggerEnter2D(Collider2D collision){
         BestScore.instance.SaveHighScore();
+        
+        //FindObjectOfType<AudioManager>().Play("");
+        
         //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         SceneManager.LoadScene("GameOver");
     }

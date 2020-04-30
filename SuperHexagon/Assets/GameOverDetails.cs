@@ -9,10 +9,12 @@ public class GameOverDetails : MonoBehaviour{
 
     public GameObject nextLevelLabel;
 
+    float score;
+
     // Start is called before the first frame update
     void Start(){
         gameOverScore.text = PlayerPrefs.GetString("GameOverScore", "0:00"); //0:00 the default value meaning error
-        float score = splitTime(gameOverScore.text);
+        score = splitTime(gameOverScore.text);
         level.text = showLevelReached(score);
         string calculationResult = calculationNextLevelAt(score);
         numberOfLevel.text = showNumberOfLevel(score);
@@ -20,7 +22,7 @@ public class GameOverDetails : MonoBehaviour{
         if(calculationResult == "max"){
             nextLevelLabel.SetActive(false);
             nextLevel.text = "STAGE COMPLETE";
-            highScore.text = "NEW RECORD";
+            highScore.text = "\nNEW RECORD";
         }else{
             nextLevel.text = calculationResult;
             string stageName = PlayerPrefs.GetString("stageName", "");
@@ -33,6 +35,17 @@ public class GameOverDetails : MonoBehaviour{
             if(stageName == "HEXAGONEST"){
                 highScore.text = PlayerPrefs.GetString("HighScore3", "0:00");
             }
+        }
+        StartCoroutine(WaitToRing());
+    }
+
+    IEnumerator WaitToRing(){
+        yield return new WaitForSeconds(0.01f);
+        AudioManager.Play("gameOver");
+        AudioManager.Play("explosion");
+        yield return new WaitForSeconds(0.6f);
+        if(score >= 999){
+            AudioManager.Play("wonderful");
         }
     }
 

@@ -6,7 +6,7 @@ public class Hexagon : MonoBehaviour{
 
     public Rigidbody2D rb;
 
-    public float shrinkSpeed = 3f;
+    public float shrinkSpeed = 3f; //how fast hexagon close
 
     // Start is called before the first frame update
     void Start(){

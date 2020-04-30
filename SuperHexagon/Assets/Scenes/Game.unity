@@ -124,6 +124,7 @@ GameObject:
   - component: {fileID: 242938690}
   - component: {fileID: 242938689}
   - component: {fileID: 242938688}
+  - component: {fileID: 242938692}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -212,6 +213,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &242938692
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 242938687}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c139175c9581c74eb9ce244bfb6f9a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -413,7 +426,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8e7dc38a94923047ac9bd130e0d148d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextSpawn: 1
   hexagonPrefab: {fileID: 6433917521061203738, guid: ab79aa0663b9e89448b89ce5150ed50e,
     type: 3}
 --- !u!4 &815865773
@@ -430,6 +442,80 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &899159731
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5840562511446210374, guid: 0065563f23f3a5c4c95925e3542069e8,
+        type: 3}
+      propertyPath: m_Name
+      value: AudioManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 5840562511446210374, guid: 0065563f23f3a5c4c95925e3542069e8,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5840562511446210376, guid: 0065563f23f3a5c4c95925e3542069e8,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5840562511446210376, guid: 0065563f23f3a5c4c95925e3542069e8,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5840562511446210376, guid: 0065563f23f3a5c4c95925e3542069e8,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5840562511446210376, guid: 0065563f23f3a5c4c95925e3542069e8,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5840562511446210376, guid: 0065563f23f3a5c4c95925e3542069e8,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5840562511446210376, guid: 0065563f23f3a5c4c95925e3542069e8,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5840562511446210376, guid: 0065563f23f3a5c4c95925e3542069e8,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5840562511446210376, guid: 0065563f23f3a5c4c95925e3542069e8,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5840562511446210376, guid: 0065563f23f3a5c4c95925e3542069e8,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5840562511446210376, guid: 0065563f23f3a5c4c95925e3542069e8,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5840562511446210376, guid: 0065563f23f3a5c4c95925e3542069e8,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 0065563f23f3a5c4c95925e3542069e8, type: 3}
 --- !u!1 &1245900134
 GameObject:
   m_ObjectHideFlags: 0
@@ -889,7 +975,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 60:00
+  m_Text: 1:00
 --- !u!222 &1475463033
 CanvasRenderer:
   m_ObjectHideFlags: 0

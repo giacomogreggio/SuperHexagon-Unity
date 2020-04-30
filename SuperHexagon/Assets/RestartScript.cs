@@ -13,7 +13,7 @@ public class RestartScript : MonoBehaviour{
             PlayerPrefs.SetFloat("nextSpawn", 2f);
         }
         if(stageName.text == "HEXAGONER"){
-            PlayerPrefs.SetFloat("nextSpawn", 1.5f);
+            PlayerPrefs.SetFloat("nextSpawn", 1005f);
         }
         if(stageName.text == "HEXAGONEST"){
             PlayerPrefs.SetFloat("nextSpawn", 1f);

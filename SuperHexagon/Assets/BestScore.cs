@@ -21,6 +21,7 @@ public class BestScore : MonoBehaviour{
     public GameObject scoreLabel;
 
     void Start(){
+        ResetVoices();
         //ResetHighScore();
         score = 0;
         savedHighScore = "";
@@ -56,6 +57,7 @@ public class BestScore : MonoBehaviour{
     void Update(){
         score = splitTime(scoreText.text);
         //Debug.Log(score);
+        timerSound();
         if(score > highScore){
             UpdateLabelHighScore();
         }
@@ -65,6 +67,7 @@ public class BestScore : MonoBehaviour{
         if(highScoreText.text != "NEW RECORD"){
             highScoreText.text = "NEW RECORD";
             scoreLabel.SetActive(false);
+            AudioManager.Play("excellent");
         }
         highScoreText.alignment = TextAnchor.MiddleRight;
     }
@@ -106,5 +109,45 @@ public class BestScore : MonoBehaviour{
         //Debug.Log("Seconds: " + seconds);
         //Debug.Log("Tenths: " + tenths);
         return seconds + tenths;
+    }
+
+    void timerSound(){
+        int line = PlayerPrefs.GetInt("line", 0);
+        int triangle = PlayerPrefs.GetInt("triangle", 0);
+        int square = PlayerPrefs.GetInt("square", 0);
+        int pentagon = PlayerPrefs.GetInt("pentagon", 0);
+        int hexagon = PlayerPrefs.GetInt("hexagon", 0);
+        if(score >= 10 && score <20 && line == 0){
+            AudioManager.Play("line");
+            PlayerPrefs.SetInt("line", 1);
+        }
+        if(score >= 20 && score <30 && triangle == 0){
+            AudioManager.Play("triangle");
+            PlayerPrefs.SetInt("triangle", 1);
+        }
+        if(score >= 30 && score <45 && square == 0){
+            AudioManager.Play("square");
+            PlayerPrefs.SetInt("square", 1);
+        }
+        if(score >= 45 && score <60 && pentagon == 0){
+            AudioManager.Play("pentagon");
+            PlayerPrefs.SetInt("pentagon", 1);
+        }
+        if(score >= 60 && score <999 && hexagon == 0){
+            AudioManager.Play("hexagon");
+            PlayerPrefs.SetInt("hexagon", 1);
+        }
+    }
+
+    public float getScore(){
+        return score;
+    }
+
+    void ResetVoices(){
+        PlayerPrefs.SetInt("line", 0);
+        PlayerPrefs.SetInt("triangle", 0);
+        PlayerPrefs.SetInt("square", 0);
+        PlayerPrefs.SetInt("pentagon", 0);
+        PlayerPrefs.SetInt("hexagon", 0);
     }
 }
