@@ -3,17 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class ChangeBackground : MonoBehaviour{
+    
     Color bgcolor;
     Color current;
-    //float duration = 1.0f;
     float t = 0.0f;
-    //float smoothnes = 0.02f;
     float increment = 0.02f;
 
     public void Start () {
          StartCoroutine(Change_color());
     }
- 
+    
+    //change background color during game
     IEnumerator Change_color(){
         current = bgcolor;
         bgcolor = new Color(Random.value, Random.value, Random.value);

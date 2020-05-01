@@ -22,23 +22,22 @@ public class BestScore : MonoBehaviour{
 
     void Start(){
         ResetVoices();
-        //ResetHighScore();
         score = 0;
         savedHighScore = "";
         if(PlayerPrefs.GetString("stageName","") == "HEXAGON"){
             savedHighScore = PlayerPrefs.GetString("HighScore1", "0:00");
             highScore = splitTime(savedHighScore);
-            Debug.Log(highScore);
+            //Debug.Log(highScore);
         }
         if(PlayerPrefs.GetString("stageName","") == "HEXAGONER"){
             savedHighScore = PlayerPrefs.GetString("HighScore2", "0:00");
             highScore = splitTime(savedHighScore);
-            Debug.Log(highScore);
+            //Debug.Log(highScore);
         }
         if(PlayerPrefs.GetString("stageName","") == "HEXAGONEST"){
             savedHighScore = PlayerPrefs.GetString("HighScore3", "0:00");
             highScore = splitTime(savedHighScore);
-            Debug.Log(highScore);
+            //Debug.Log(highScore);
         }
         if(highScore == 0.0){
             highScoreText.text = "NEW RECORD";
@@ -74,8 +73,6 @@ public class BestScore : MonoBehaviour{
 
     public void SaveHighScore(){
         score = splitTime(scoreText.text);
-        //Debug.Log(score);
-        //Debug.Log(scoreText.text);
         if(score > highScore){
             setHighScore();
         }
@@ -111,6 +108,7 @@ public class BestScore : MonoBehaviour{
         return seconds + tenths;
     }
 
+    //play voices when a new level is reached
     void timerSound(){
         int line = PlayerPrefs.GetInt("line", 0);
         int triangle = PlayerPrefs.GetInt("triangle", 0);
@@ -143,6 +141,7 @@ public class BestScore : MonoBehaviour{
         return score;
     }
 
+    //reset level voices of the stage
     void ResetVoices(){
         PlayerPrefs.SetInt("line", 0);
         PlayerPrefs.SetInt("triangle", 0);

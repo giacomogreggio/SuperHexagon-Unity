@@ -6,10 +6,11 @@ using DG.Tweening;
 
 public class UIManager : MonoBehaviour{
 
+    // controls the different stages and buttons that bring from a stage to another stage
     public Text stage1Text, stage2Text, stage3Text;
 
     public RectTransform stage1, stage2, stage3;
-    // Start is called before the first frame update
+
     void Start(){
         stage1.DOAnchorPos(Vector2.zero, 0.25f);
         string stageName = PlayerPrefs.GetString("stageName", "");

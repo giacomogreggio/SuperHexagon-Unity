@@ -18,7 +18,6 @@ public class GameOverDetails : MonoBehaviour{
         level.text = showLevelReached(score);
         string calculationResult = calculationNextLevelAt(score);
         numberOfLevel.text = showNumberOfLevel(score);
-        //Debug.Log(calculationResult);
         if(calculationResult == "max"){
             nextLevelLabel.SetActive(false);
             nextLevel.text = "STAGE COMPLETE";
@@ -36,9 +35,14 @@ public class GameOverDetails : MonoBehaviour{
                 highScore.text = PlayerPrefs.GetString("HighScore3", "0:00");
             }
         }
-        StartCoroutine(WaitToRing());
+        if(PlayerPrefs.GetInt("tutorial", 0) == 0){
+            StartCoroutine(WaitToRing());
+        }else{
+            PlayerPrefs.SetInt("tutorial", 0);
+        }
     }
 
+    //this method is used to play right voices when game over scene is loaded
     IEnumerator WaitToRing(){
         yield return new WaitForSeconds(0.01f);
         AudioManager.Play("gameOver");
@@ -60,6 +64,7 @@ public class GameOverDetails : MonoBehaviour{
         return seconds + tenths;
     }
 
+    // game over details: threshold of next level
     string calculationNextLevelAt(float score){
         float toNext = 0f;
         if(score >= 60){
@@ -83,6 +88,7 @@ public class GameOverDetails : MonoBehaviour{
 
     }
 
+    // game over details: name of the level reached
     string showLevelReached(float score){
         if(score >= 60){
             return "HEXAGON";
@@ -106,6 +112,7 @@ public class GameOverDetails : MonoBehaviour{
         }
     }
 
+    // game over details: number of level reached
     string showNumberOfLevel(float score){
         if(score >= 60){
             return "6";

@@ -26,10 +26,9 @@ public class Spawner : MonoBehaviour{
         if(stageName == "HEXAGONEST"){
             AudioManager.Play("stage3");
         }
-        //FindObjectOfType<AudioManager>().Play("StageSong");
     }
 
-    // Update is called once per frame
+    // controls the spawn of hexagons
     void Update(){
         nextSpawn = PlayerPrefs.GetFloat("nextSpawn", 0f);
         if(nextSpawn != 0f){

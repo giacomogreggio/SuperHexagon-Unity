@@ -5,7 +5,7 @@ using UnityEngine;
 public class RotateHexagon : MonoBehaviour{
 
 
-    // Update is called once per frame
+    // hexagon in select stage scene background and game over scene background
     void Update(){
         transform.Rotate(new Vector3(0f, 0f, 50f) * Time.deltaTime);
     }

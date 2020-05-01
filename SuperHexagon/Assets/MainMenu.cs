@@ -15,9 +15,15 @@ public class MainMenu : MonoBehaviour{
         src = GetComponent<AudioSource>();
         if(start == 1){
             src.volume = PlayerPrefs.GetFloat("volume", 1f);
-            src.PlayOneShot(startClip);
+            StartCoroutine(WaitToRing());
             PlayerPrefs.SetInt("startApp", 0);
         }
+    }
+
+    //this method is used for entry voice of the game in main menu
+    IEnumerator WaitToRing(){
+        yield return new WaitForSeconds(1f);
+        src.PlayOneShot(startClip);
     }
 
     GameObject optionMenus;

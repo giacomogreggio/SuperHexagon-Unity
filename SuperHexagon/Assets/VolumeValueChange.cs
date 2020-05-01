@@ -11,14 +11,12 @@ public class VolumeValueChange : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-
         // Assign Audio Source component to control it
         audioSrc = GetComponent<AudioSource>();
 	}
 	
 	// Update is called once per frame
 	void Update () {
-
         // Setting volume option of Audio Source to be equal to musicVolume
         audioSrc.volume = PlayerPrefs.GetFloat("volume", 1f);
 	}
@@ -26,8 +24,7 @@ public class VolumeValueChange : MonoBehaviour {
     // Method that is called by slider game object
     // This method takes vol value passed by slider
     // and sets it as musicValue
-    public void SetVolume(float vol)
-    {
+    public void SetVolume(float vol){
         PlayerPrefs.SetFloat("volume", vol);
         musicVolume = vol;
     }

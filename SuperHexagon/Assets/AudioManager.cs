@@ -1,13 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-//using UnityEngine.Audio;
 using UnityEngine;
 using UnityEngine.UI;
-//using System;
 
 public class AudioManager : MonoBehaviour{
 
-    public static AudioClip stage1Clip, stage2Clip, stage3Clip, button, startStage, gameOver, explosion, again, excellent, line, triangle, square, pentagon, hexagon, wonderful;
+    public static AudioClip stage1Clip, stage2Clip, stage3Clip, startStage, gameOver, explosion, again, excellent, line, triangle, square, pentagon, hexagon, wonderful;
     public static AudioSource audioSrc;
 
     void Start(){
@@ -17,7 +15,6 @@ public class AudioManager : MonoBehaviour{
         stage1Clip = Resources.Load<AudioClip>("stage1");
         stage2Clip = Resources.Load<AudioClip>("stage2");
         stage3Clip = Resources.Load<AudioClip>("stage3");
-        button = Resources.Load<AudioClip>("button");
         startStage = Resources.Load<AudioClip>("StartStage2");
         again = Resources.Load<AudioClip>("Again");
         gameOver = Resources.Load<AudioClip>("GameOver");
@@ -47,9 +44,6 @@ public class AudioManager : MonoBehaviour{
                 audioSrc.clip = stage3Clip;
                 audioSrc.loop = true;
                 audioSrc.Play();
-                break;
-            case "button":
-                audioSrc.PlayOneShot(button);
                 break;
             case "startStage":
                 audioSrc.PlayOneShot(startStage);
@@ -90,33 +84,4 @@ public class AudioManager : MonoBehaviour{
     public static void Stop(){
         audioSrc.Stop();
     }
-
-    /*
-    public Sound[] sounds;
-
-    void Awake(){
-        string stageName = PlayerPrefs.GetString("stageName", "");
-        foreach(Sound s in sounds){
-           
-            s.source = gameObject.AddComponent<AudioSource>();
-            
-            if(stageName == "HEXAGON"){
-                s.source.clip = s.clip1;
-            }
-            if(stageName == "HEXAGONER"){
-                s.source.clip = s.clip2;
-            }
-            if(stageName == "HEXAGONEST"){
-                s.source.clip = s.clip3;
-            }
-            //s.source.clip = s.clip;
-            s.source.volume = s.volume;
-            s.source.pitch = s.pitch;
-        }
-    }
-
-    public  void Play(string name){
-        Sound s = Array.Find(sounds, sound => sound.name == name);
-        s.source.Play();
-    }*/
 }
