@@ -5,27 +5,27 @@ using UnityEngine.UI;
 
 public class AudioManager : MonoBehaviour{
 
-    public static AudioClip stage1Clip, stage2Clip, stage3Clip, startStage, gameOver, explosion, again, excellent, line, triangle, square, pentagon, hexagon, wonderful;
+    public static AudioClip stage1Clip, stage2Clip, stage3Clip, startStage, again, excellent, line, triangle, square, pentagon, hexagon;
     public static AudioSource audioSrc;
 
-    void Start(){
-        
+    void Awake() {
         audioSrc = GetComponent<AudioSource>();
+        audioSrc.Stop();
+    }
+
+    void Start(){
 
         stage1Clip = Resources.Load<AudioClip>("stage1");
         stage2Clip = Resources.Load<AudioClip>("stage2");
         stage3Clip = Resources.Load<AudioClip>("stage3");
         startStage = Resources.Load<AudioClip>("StartStage2");
         again = Resources.Load<AudioClip>("Again");
-        gameOver = Resources.Load<AudioClip>("GameOver");
-        explosion = Resources.Load<AudioClip>("Explosion");
         excellent = Resources.Load<AudioClip>("Excellent");
         line = Resources.Load<AudioClip>("Line");
         triangle = Resources.Load<AudioClip>("Triangle");
         square = Resources.Load<AudioClip>("Square");
         pentagon = Resources.Load<AudioClip>("Pentagon");
         hexagon = Resources.Load<AudioClip>("Hexagon");
-        wonderful = Resources.Load<AudioClip>("Wonderful");
     }
 
     public static void Play(string clip){
@@ -48,12 +48,6 @@ public class AudioManager : MonoBehaviour{
             case "startStage":
                 audioSrc.PlayOneShot(startStage);
                 break;
-            case "gameOver":
-                audioSrc.PlayOneShot(gameOver);
-                break;
-            case "explosion":
-                audioSrc.PlayOneShot(explosion);
-                break;
             case "again":
                 audioSrc.PlayOneShot(again);
                 break;
@@ -74,9 +68,6 @@ public class AudioManager : MonoBehaviour{
                 break;
             case "hexagon":
                 audioSrc.PlayOneShot(hexagon);
-                break;
-            case "wonderful":
-                audioSrc.PlayOneShot(wonderful);
                 break;
         }
     }

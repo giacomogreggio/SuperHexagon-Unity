@@ -11,8 +11,21 @@ public class GameOverDetails : MonoBehaviour{
 
     float score;
 
+    public static AudioClip gameOverClip;
+    public static AudioClip explosionClip;
+    public static AudioClip wonderfulClip;
+    public static AudioSource src;
+
+    void Awake() {
+        src = GetComponent<AudioSource>();
+        src.volume = PlayerPrefs.GetFloat("volume", 1f);
+        gameOverClip = Resources.Load<AudioClip>("GameOver");
+        explosionClip = Resources.Load<AudioClip>("Explosion");
+        wonderfulClip = Resources.Load<AudioClip>("Wonderful");  
+    }
+
     // Start is called before the first frame update
-    void Start(){
+    void Start(){   
         gameOverScore.text = PlayerPrefs.GetString("GameOverScore", "0:00"); //0:00 the default value meaning error
         score = splitTime(gameOverScore.text);
         level.text = showLevelReached(score);
@@ -45,11 +58,11 @@ public class GameOverDetails : MonoBehaviour{
     //this method is used to play right voices when game over scene is loaded
     IEnumerator WaitToRing(){
         yield return new WaitForSeconds(0.01f);
-        AudioManager.Play("gameOver");
-        AudioManager.Play("explosion");
+        src.PlayOneShot(gameOverClip);
+        src.PlayOneShot(explosionClip);
         yield return new WaitForSeconds(0.6f);
         if(score >= 999){
-            AudioManager.Play("wonderful");
+            src.PlayOneShot(wonderfulClip);
         }
     }
 
