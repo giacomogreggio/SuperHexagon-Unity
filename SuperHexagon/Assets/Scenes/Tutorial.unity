@@ -397,9 +397,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "On Game Scene:\nTap on the left side of the screen to move player on anticlockwise\nTap
-    on the right side of the screen to move player on clockwise\nEscape from Hexagons,
-    reach HEXAGON level to complete the current stage and go further to set new records\nEnjoy
+  m_text: "On Game Scene:\nTap on the left side of the screen to move player anticlockwise\nTap
+    on the right side of the screen to move player clockwise\nEscape from Hexagons,
+    reach HEXAGON level to complete the current stage and go further to set new records\n\nEnjoy
     the Game!\t\t\t\tCredits: Giacomo Greggio"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
@@ -446,7 +446,7 @@ MonoBehaviour:
   m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
-  m_firstOverflowCharacterIndex: 252
+  m_firstOverflowCharacterIndex: 247
   m_linkedTextComponent: {fileID: 0}
   m_isLinkedTextComponent: 0
   m_isTextTruncated: 0
@@ -470,10 +470,10 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 1010757862}
-    characterCount: 295
+    characterCount: 290
     spriteCount: 0
-    spaceCount: 55
-    wordCount: 53
+    spaceCount: 54
+    wordCount: 51
     linkCount: 0
     lineCount: 8
     pageCount: 1
