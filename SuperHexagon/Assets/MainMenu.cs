@@ -13,6 +13,8 @@ public class MainMenu : MonoBehaviour{
         //PlayerPrefs.SetInt("first", 0);
         int first = PlayerPrefs.GetInt("first", 0);
         if(first == 0){
+            ResetData.initialReset();
+            PlayerPrefs.SetString("CurrentSceneForTutorial", SceneManager.GetActiveScene().name);
             PlayerPrefs.SetInt("first", 1);
             SceneManager.LoadScene("Tutorial");
         }
@@ -52,7 +54,7 @@ public class MainMenu : MonoBehaviour{
     }
 
     public void savePreviousScene(){
-        Debug.Log(SceneManager.GetActiveScene().name);
+        //Debug.Log(SceneManager.GetActiveScene().name);
         PlayerPrefs.SetString("CurrentScene", SceneManager.GetActiveScene().name);
     }
 
