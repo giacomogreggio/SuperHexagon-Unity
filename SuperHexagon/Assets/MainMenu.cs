@@ -9,8 +9,17 @@ public class MainMenu : MonoBehaviour{
     public static AudioClip startClip;
     public static AudioSource src;
 
+    void Awake() {
+        //PlayerPrefs.SetInt("first", 0);
+        int first = PlayerPrefs.GetInt("first", 0);
+        if(first == 0){
+            PlayerPrefs.SetInt("first", 1);
+            SceneManager.LoadScene("Tutorial");
+        }
+    }
+    
     void Start(){
-        int start = PlayerPrefs.GetInt("startApp", 0);
+        int start = PlayerPrefs.GetInt("startApp", 1);
         startClip = Resources.Load<AudioClip>("start");
         src = GetComponent<AudioSource>();
         if(start == 1){
